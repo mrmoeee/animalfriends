@@ -20,9 +20,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-
+    // on page load render all the items already in the database
+    // itemReferences 
     const itemRefs = firebase.database().ref('items');
-    itemRefs.on('value', (snapshot) => {
+    // what is value, snapshot callback to re-render when new items are added to database
+    itemRefs.on('value', (snapshot) =>  {
       let items = snapshot.val();
       let newState = [];
       for (let item in items) {
@@ -76,6 +78,8 @@ class App extends Component {
       user: this.state.user.displayName || this.state.user.email
     }
     itemsRef.push(item);
+    // resets state when item is pushed into database
+    // reset input field 
     this.setState({
       currentItem: '',
       username: ''
