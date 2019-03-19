@@ -112,7 +112,7 @@ class App extends Component {
             <div className='container'>
               <section className='add-item'>
                 <form onSubmit={this.handleSubmit}>
-                  <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.user.displayName || this.state.user.email} readOnly />
+                  <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.user.displayName || this.state.user.email} disabled />
                   <input type="text" name="currentItem" placeholder="What animal are you adding?" onChange={this.handleChange} value={this.state.currentItem} />
                   <button>Add Animal</button>
                 </form>
